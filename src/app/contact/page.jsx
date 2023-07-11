@@ -2,6 +2,11 @@
 
 import Image from "next/image";
 
+export const metadata = {
+  title: "Contact",
+  description: "Get in touch with us",
+};
+
 const Contact = () => {
   const formHandler = (e) => {
     e.preventDefault();
@@ -87,7 +92,12 @@ const Contact = () => {
           </form>
 
           <aside className="flex-1">
-            <Image src={"/contact-bg.jpg  "} width={1000} height={500} alt="contact image"/>
+            <Image
+              src={"/contact-bg.jpg  "}
+              width={1000}
+              height={500}
+              alt="contact image"
+            />
           </aside>
         </div>
       </div>

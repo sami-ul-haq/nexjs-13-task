@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const getPosts = async () => {
   const response = await fetch("https://jsonplaceholder.typicode.com/posts");
   return await response.json();
@@ -16,10 +18,15 @@ const Blog = async () => {
         {posts.map((post) => (
           <div
             key={post.id}
-            className="post-box rounded-md border border-[#333] p-4 space-y-2 hover:bg-[#333]"
+            className="post-box group rounded-md border border-[#333] p-4 space-y-2 hover:bg-[#333]"
           >
-            <h1>{post.title}</h1>
+            <h1 className="text-[25px] font-bold">{post.title}</h1>
             <p> {post.body}</p>
+            <Link href={`/post/${post.id}`}>
+            <button className="border border-[#333] rounded-md px-4 py-3 group-hover:bg-white group-hover:text-black">
+              Read more
+            </button>
+            </Link>
           </div>
         ))}
       </div>

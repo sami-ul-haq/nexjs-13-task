@@ -37,6 +37,11 @@ const features = [
   },
 ];
 
+export const metadata = {
+  title: "About",
+  description: "Know more about us",
+};
+
 const About = () => {
   return (
     <div className="about">
